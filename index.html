@@ -68,9 +68,67 @@ body {
 .sticky + .content {
   padding-top: 60px;
 }
+
+/*  */
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/*  */
+
 </style>
 </head>
 <body>
+
+<div id="myNav" class="overlay">
+  <a class="closebtn" onclick="closeNav()">Home</a>
+  <div class="overlay-content">
+    <p>geburt</p>
+    <p>realschule</p>
+    <p>ausbildung</p>
+    <p>austausch england</p>
+    <h1>42</h1>
+
+
+  </div>
+</div>
 
 <div class="header">
   <img class="img" src="./images/dis_isses.jpg" alt="ape" class="center">
@@ -86,7 +144,7 @@ body {
 </div>
 
 <div id="navbar">
-  <a href="./about.html">About</a>
+  <a onclick="openNav()">About</a>
   <a href="./projects.html">Projects</a>
   <a href="./contact.html">Contact</a>
 </div>
@@ -97,7 +155,9 @@ body {
   <section>
   </section>
 
+
 </div>
+
 
 <script>
 window.onscroll = function() {myFunction()};
@@ -113,6 +173,16 @@ function myFunction() {
   }
 }
 </script>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+  </script>
 
 </body>
 </html>
